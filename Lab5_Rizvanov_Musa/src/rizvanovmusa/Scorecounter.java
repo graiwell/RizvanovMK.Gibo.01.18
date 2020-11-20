@@ -10,8 +10,6 @@ public class Scorecounter {
     public static void main(String[] args) {
         JFrame fr1 = new JFrame("AC Milan против Real Madrid");
         Container cp;
-        JButton bt1;
-        JButton bt2;
         cnt1 = 0;
         cnt2 = 0;
         String scr = "N/A";
@@ -39,8 +37,10 @@ public class Scorecounter {
                 cnt1++;
                 lbl1.setText("Result: " + cnt1 + " X " + cnt2);
                 lbl2.setText("Last Scorer: " + "AC Milan");
-                if(cnt1 - cnt2 > 0)
+                if(cnt1 > cnt2)
                     lbl3.setText("Winner: " + "AC Milan");
+                if(cnt1 == cnt2)
+                    lbl3.setText("Winner: " + "DRAW");
             }
         });
 
@@ -49,8 +49,10 @@ public class Scorecounter {
                 cnt2++;
                 lbl1.setText("Result: " + cnt1 + " X " + cnt2);
                 lbl2.setText("Last Scorer: " + "Real Madrid");
-                if(cnt1 - cnt2 < 0)
+                if(cnt1 < cnt2)
                     lbl3.setText("Winner: " + "Real Madrid");
+                if(cnt2 == cnt1)
+                    lbl3.setText("Winner: " + "DRAW");
             }
         });
 
